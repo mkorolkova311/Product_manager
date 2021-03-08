@@ -66,6 +66,10 @@
                                         <exclude>*Test</exclude>
                                         <exclude>get*</exclude>
                                         <exclude>set*</exclude>
+                                        <exclude>*findById*</exclude>
+                                        <exclude>*removeById*</exclude>
+                                        <exclude>*equals*</exclude>
+                                        <exclude>*matches*</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>
