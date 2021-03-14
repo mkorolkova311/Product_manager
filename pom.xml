@@ -70,6 +70,8 @@
                                         <exclude>*removeById*</exclude>
                                         <exclude>*equals*</exclude>
                                         <exclude>*matches*</exclude>
+                                        <exclude>*searcyBy*</exclude>
+
                                     </excludes>
                                     <limits>
                                         <limit>
