@@ -1,5 +1,8 @@
-package ru.netology.product.domain;
+package ru.netology.product.manager;
 
+import ru.netology.product.domain.Book;
+import ru.netology.product.domain.Product;
+import ru.netology.product.domain.Smartphone;
 import ru.netology.product.repository.ProductRepository;
 
 public class ProductManager {
@@ -47,6 +50,10 @@ public class ProductManager {
         }
         return false;
 
+    }
+
+    public int getLengthRepository(){
+        return repository.findAll().length;
     }
 
 
