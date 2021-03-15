@@ -5,9 +5,11 @@ import ru.netology.product.domain.Product;
 import ru.netology.product.domain.Smartphone;
 import ru.netology.product.repository.ProductRepository;
 
+import java.util.Objects;
+
 public class ProductManager {
     private ProductRepository repository = new ProductRepository();
-    public Product[] searcyBy(String text) {
+    public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product: repository.findAll()) {
             if (matches(product, text)) {
@@ -18,13 +20,12 @@ public class ProductManager {
             }
         }
         return result;
-
     }
 
     public void addProduct(Product product) {
         repository.save(product);
     }
-
+    public Product[] getAll() { return repository.findAll();}
 
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
@@ -35,9 +36,7 @@ public class ProductManager {
             if (book.getAuthor().equalsIgnoreCase(search)) {
                 return true;
             }
-
         }
-
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
             if (smartphone.getName().equalsIgnoreCase(search)) {
@@ -46,15 +45,7 @@ public class ProductManager {
             if (smartphone.getManufacturer().equalsIgnoreCase(search)) {
                 return true;
             }
-
         }
         return false;
-
     }
-
-    public int getLengthRepository(){
-        return repository.findAll().length;
-    }
-
-
 }
